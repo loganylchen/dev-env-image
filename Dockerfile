@@ -23,7 +23,8 @@ RUN apt update -y && \
     libharfbuzz-dev libfribidi-dev build-essential cmake && \
     sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
     locale-gen && \
-    update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+    update-alternatives --install /usr/bin/python python /usr/bin/python3 1 && \
+    sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.1/zsh-in-docker.sh)"
 
 ENV LANG=en_US.UTF-8  
 ENV LANGUAGE=en_US:en  
